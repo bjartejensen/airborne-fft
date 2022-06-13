@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "airbone": "apps/airbone",
+    "airbone-e2e": "apps/airbone-e2e",
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces"
+  }
+}
