@@ -1,0 +1,10 @@
+::ng-deep .apex {
+  svg path {
+    stroke-width: 1;
+  }
+}
+
+:host {
+  outline: 1px solid rgb(171, 169, 172);
+  outline-offset: -0.125rem;
+}

@@ -1,8 +1,10 @@
 {
   "version": 2,
   "projects": {
-    "airbone": "apps/airbone",
-    "airbone-e2e": "apps/airbone-e2e",
+    "airborne": "apps/airborne",
+    "airborne-dates": "libs/airborne-dates",
+    "airborne-e2e": "apps/airborne-e2e",
+    "airborne-types": "libs/airborne-types",
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces"
   }

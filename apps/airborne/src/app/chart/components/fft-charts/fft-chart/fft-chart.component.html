@@ -1,0 +1,17 @@
+<!-- Grouped polylines for PRIMARY axis -->
+<svg class="core-chart" airborneFftChart>
+  <g *ngFor="let line of ts">
+    <polyline
+      appChartLine
+      [id]="line.colorIndex"
+      class="polyline primary stroke--"
+      [attr.points]="line.polyline"
+    />
+
+    <polyline
+      [id]="line.colorIndex"
+      class="polyline shadow non-stroke--"
+      [attr.points]="line.polylineShadow"
+    />
+  </g>
+</svg>

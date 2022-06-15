@@ -1,0 +1,23 @@
+<div
+  class="container"
+  airborneFrontpageChartDir
+  [chartWidth]="chartWidth"
+  [chartHeight]="chartHeight"
+  [chartTitle]="chartTitle"
+  [colorIndex]="colorIndex"
+  (chartOptionsEmitter)="handleChartOption($event)"
+>
+  <apx-chart
+    class="apex"
+    [series]="chartConfig.series"
+    [chart]="chartConfig.chart"
+    [xaxis]="chartConfig.xaxis"
+    [stroke]="chartConfig.stroke"
+    [dataLabels]="chartConfig.dataLabels"
+    [yaxis]="chartConfig.yaxis"
+    [labels]="chartConfig.labels"
+    [legend]="chartConfig.legend"
+    [title]="chartConfig.title"
+    [subtitle]="chartConfig.subtitle"
+  ></apx-chart>
+</div>

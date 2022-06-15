@@ -1,0 +1,32 @@
+{
+  "root": "libs/airborne-dates",
+  "sourceRoot": "libs/airborne-dates/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/airborne-dates",
+        "main": "libs/airborne-dates/src/index.ts",
+        "tsConfig": "libs/airborne-dates/tsconfig.lib.json",
+        "assets": ["libs/airborne-dates/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/airborne-dates/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/airborne-dates"],
+      "options": {
+        "jestConfig": "libs/airborne-dates/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

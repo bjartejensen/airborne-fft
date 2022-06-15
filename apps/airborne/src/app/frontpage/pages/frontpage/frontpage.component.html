@@ -1,0 +1,40 @@
+<div class="container">
+  <ng-container *ngIf="bruntonData$ | async as data">
+    <div class="decomposition-charts">
+      <div class="main-chart" airborneFrontpage [width]="mainChartWidthVW">
+        <airborne-frontpage-chart
+          [chartTitle]="'Brunton Simulated Noisy Data'"
+          [chartWidth]="mainChartWidthVW"
+          [chartHeight]="chartsHeight"
+          [data]="[data.original]"
+        ></airborne-frontpage-chart>
+      </div>
+
+      <div class="sub-charts" airborneFrontpage [width]="mainChartWidthVW">
+        <airborne-frontpage-chart
+          [chartTitle]="'Periodicity'"
+          [colorIndex]="2"
+          [chartWidth]="mainChartWidthVW"
+          [chartHeight]="chartsHeight"
+          [data]="[data.periodicity]"
+        ></airborne-frontpage-chart>
+      </div>
+    </div>
+    <div class="phase-chart">
+      <airborne-frontpage-chart
+        [chartTitle]="'Noise'"
+        [colorIndex]="3"
+        [chartWidth]="amplitudeFreqChartWidth"
+        [chartHeight]="amplitudeFreqChartHeight"
+        [data]="[data.noise]"
+      ></airborne-frontpage-chart>
+      <airborne-frontpage-chart
+        [chartTitle]="'Power Spectrum Density'"
+        [colorIndex]="4"
+        [chartWidth]="amplitudeFreqChartWidth"
+        [chartHeight]="amplitudeFreqChartHeight"
+        [data]="[data.psd]"
+      ></airborne-frontpage-chart>
+    </div>
+  </ng-container>
+</div>

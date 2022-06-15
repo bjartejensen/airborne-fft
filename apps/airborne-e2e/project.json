@@ -1,0 +1,28 @@
+{
+  "root": "apps/airborne-e2e",
+  "sourceRoot": "apps/airborne-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/airborne-e2e/cypress.json",
+        "devServerTarget": "airborne:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "airborne:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/airborne-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["airborne"]
+}
