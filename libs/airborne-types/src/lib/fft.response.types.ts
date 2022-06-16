@@ -4,6 +4,6 @@ export type TFFTResult = {
   original: TTimeseriesRaw;
   periodicity: TTimeseriesRaw;
   noise: TTimeseriesRaw;
-  trend: TTimeseriesRaw;
+  //trend: TTimeseriesRaw;
   psd: TTimeseriesRaw;
 };

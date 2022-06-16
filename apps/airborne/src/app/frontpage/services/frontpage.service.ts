@@ -1,31 +1,31 @@
-import {
-  TFFTResult,
-  TTimeseries,
-  TTimeseriesRaw,
-} from '@airborne/airborne-types';
+import { TFFTResult } from '@airborne/airborne-types';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, InjectionToken } from '@angular/core';
 import { environment } from 'apps/airborne/src/environments/environment';
 import { catchError, Observable } from 'rxjs';
 
-//#region Interface - BruntonRandTSFetch
+//#region Interface - FFTDecompositionFetch
 
-interface IBruntonRandTSFetch {
-  fetchBruntonRandTS(): Observable<TFFTResult>;
+interface IFFTDecompositionFetch {
+  fetchFFTDecomposition(): Observable<TFFTResult>;
 }
 
 //#endregion
 
 //#region Interface - Frontpage All
 
-interface IFrontpageServiceAll extends IBruntonRandTSFetch {}
+interface IFrontpageServiceAll extends IFFTDecompositionFetch {}
 
 //#endregion
 
-//#region Interface - Composite For
+//#region Interface - CompositeFor
 
+/**The "I" and the "D" in S.O.L.I.D for Angular
+ * @I Interface Segregation Principle - Prevent classes from relying on things that they don’t need
+ * @D Dependency Inversion Principle - Abstractions should not depend on details. Details should depend on abstractions
+ */
 export interface IFrontpageServiceCompositeForFrontpageComponent
-  extends IBruntonRandTSFetch {}
+  extends IFFTDecompositionFetch {}
 
 //#endregion
 
@@ -50,10 +50,10 @@ export class FrontpageService implements IFrontpageServiceAll {
 
   //#endregion
 
-  //#region Implementation - IBruntonRandTSFetch
+  //#region Implementation - IFFTDecompositionFetch
 
-  public fetchBruntonRandTS(): Observable<TFFTResult> {
-    const path: string = '/fft/test-flask';
+  public fetchFFTDecomposition(): Observable<TFFTResult> {
+    const path: string = '/fft/decompose';
 
     return this.httpClient
       .get<TFFTResult>(`${environment.apiPath}${path}`)

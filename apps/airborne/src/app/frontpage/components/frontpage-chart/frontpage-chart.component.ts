@@ -1,6 +1,5 @@
 import {
   TApexAreaChartConfig,
-  TTimeseries,
   TTimeseriesRaw,
   TVHHeight,
   TVWWidth,

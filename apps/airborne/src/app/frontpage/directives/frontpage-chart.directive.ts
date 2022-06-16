@@ -52,9 +52,6 @@ export class FrontpageChartDirective implements OnInit {
     const clr = this.colorPalette.find(
       (x) => x.index === (this.colorIndex ?? 1)
     )?.backgroundColorCode!;
-
-    console.log('CLR: ', clr, this.colorIndex);
-
     return clr;
   }
 
@@ -82,7 +79,7 @@ export class FrontpageChartDirective implements OnInit {
         show: true,
         colors: [this.getColorFromColorIndex()],
       },
-      title: { text: this.chartTitle! ?? '' },
+      title: { style: { fontSize: '12px' }, text: this.chartTitle! ?? '' },
 
       xaxis: {
         type: 'numeric',

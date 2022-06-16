@@ -1,4 +1,4 @@
-import { TVHHeight, TVWWidth } from '@airborne/airborne-types';
+import { TVWWidth } from '@airborne/airborne-types';
 import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
@@ -8,6 +8,4 @@ export class FrontpageDirective {
   @Input()
   @HostBinding('style.width')
   width!: TVWWidth;
-
-  constructor() {}
 }

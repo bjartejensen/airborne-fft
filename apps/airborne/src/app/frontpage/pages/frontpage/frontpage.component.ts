@@ -1,11 +1,10 @@
+import { TFFTResult, TVHHeight, TVWWidth } from '@airborne/airborne-types';
 import {
-  TFFTResult,
-  TTimeseries,
-  TTimeseriesRaw,
-  TVHHeight,
-  TVWWidth,
-} from '@airborne/airborne-types';
-import { Component, Inject, OnInit } from '@angular/core';
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  OnInit,
+} from '@angular/core';
 import { Observable } from 'rxjs';
 import {
   FRONTPAGE_SERVICE_TOKEN,
@@ -16,11 +15,12 @@ import {
   selector: 'airborne-frontpage',
   templateUrl: './frontpage.component.html',
   styleUrls: ['./frontpage.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FrontpageComponent implements OnInit {
   //#region Observables
 
-  bruntonData$!: Observable<TFFTResult>;
+  fftDecompositionResult$!: Observable<TFFTResult>;
 
   //#endregion
 
@@ -41,7 +41,8 @@ export class FrontpageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.bruntonData$ = this.frontPageService.fetchBruntonRandTS();
+    this.fftDecompositionResult$ =
+      this.frontPageService.fetchFFTDecomposition();
   }
 
   //#endregion

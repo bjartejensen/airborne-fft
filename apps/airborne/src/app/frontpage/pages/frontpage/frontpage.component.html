@@ -1,9 +1,9 @@
 <div class="container">
-  <ng-container *ngIf="bruntonData$ | async as data">
+  <ng-container *ngIf="fftDecompositionResult$ | async as data">
     <div class="decomposition-charts">
       <div class="main-chart" airborneFrontpage [width]="mainChartWidthVW">
         <airborne-frontpage-chart
-          [chartTitle]="'Brunton Simulated Noisy Data'"
+          [chartTitle]="'Simulated Data  - two sine waves + randomized noise'"
           [chartWidth]="mainChartWidthVW"
           [chartHeight]="chartsHeight"
           [data]="[data.original]"
@@ -12,7 +12,9 @@
 
       <div class="sub-charts" airborneFrontpage [width]="mainChartWidthVW">
         <airborne-frontpage-chart
-          [chartTitle]="'Periodicity'"
+          [chartTitle]="
+            'Clean Periodicity - two sine waves at 50 and 120 hertz'
+          "
           [colorIndex]="2"
           [chartWidth]="mainChartWidthVW"
           [chartHeight]="chartsHeight"
@@ -22,14 +24,16 @@
     </div>
     <div class="phase-chart">
       <airborne-frontpage-chart
-        [chartTitle]="'Noise'"
+        [chartTitle]="'Noise - Data LESS the periodicity'"
         [colorIndex]="3"
         [chartWidth]="amplitudeFreqChartWidth"
         [chartHeight]="amplitudeFreqChartHeight"
         [data]="[data.noise]"
       ></airborne-frontpage-chart>
       <airborne-frontpage-chart
-        [chartTitle]="'Power Spectrum Density'"
+        [chartTitle]="
+          'Power Spectrum Density - The magitude at 50 and 120 hertz'
+        "
         [colorIndex]="4"
         [chartWidth]="amplitudeFreqChartWidth"
         [chartHeight]="amplitudeFreqChartHeight"

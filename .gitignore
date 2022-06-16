@@ -42,3 +42,4 @@ Thumbs.db
 
 # Secret files
 .env
+/.env
