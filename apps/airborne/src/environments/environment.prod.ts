@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiPath: 'api/',
+  apiPath: 'https://airborne-fft.herokuapp.com/api',
 };

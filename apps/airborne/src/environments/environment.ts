@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiPath: 'https://airborne-fft.herokuapp.com/api/',
+  apiPath: 'api/',
 };
 
 //https://airborne-fft.herokuapp.com/api
