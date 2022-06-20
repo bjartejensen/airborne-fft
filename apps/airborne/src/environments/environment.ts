@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  apiPath: 'api/',
+  apiPath: 'https://airborne-fft.herokuapp.com/api/',
 };
+
+//https://airborne-fft.herokuapp.com/api
 
 /*
  * For easier debugging in development mode, you can import the following file
