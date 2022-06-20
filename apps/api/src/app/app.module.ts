@@ -9,7 +9,7 @@ import { AppService } from './app.service';
   imports: [
     ConfigModule.forRoot({
       envFilePath: process.env.NODE_ENV
-        ? 'apps/api/development.env'
+        ? 'apps/api/production.env'
         : 'apps/api/development.env',
       isGlobal: true,
     }),
