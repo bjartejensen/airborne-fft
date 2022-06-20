@@ -1,0 +1,12 @@
+{
+  "name": "@airborne/airborne-dates",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "dependencies": {},
+  "peerDependencies": {
+    "moment": "^2.29.3",
+    "tslib": "^2.0.0"
+  }
+}
